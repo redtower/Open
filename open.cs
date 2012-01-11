@@ -12,6 +12,8 @@ class Open {
                     } catch (System.ComponentModel.Win32Exception e) {
                         Console.WriteLine("[ERROR] " + arg + " : " +  e.Message);
                     }
+                } else if (Directory.Exists(arg)) {
+                        Process.Start("EXPLORER.EXE", "/n, " + arg);
                 } else {
                     Console.WriteLine("[ERROR] File Not Found : " + arg);
                 }
